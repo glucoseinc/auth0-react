@@ -1,4 +1,5 @@
 import {
+  Auth0Client,
   BaseLoginOptions,
   GetIdTokenClaimsOptions,
   GetTokenSilentlyOptions,
@@ -156,6 +157,11 @@ export interface Auth0ContextInterface extends AuthState {
    * @param options
    */
   buildLogoutUrl: (options?: LogoutUrlOptions) => string;
+
+  /**
+   * Auth0Client
+   */
+  client: Auth0Client;
 }
 
 /**
@@ -178,6 +184,7 @@ const initialContext = {
   loginWithRedirect: stub,
   loginWithPopup: stub,
   logout: stub,
+  client: ({} as unknown) as Auth0Client,
 };
 
 /**
