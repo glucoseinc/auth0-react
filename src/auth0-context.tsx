@@ -13,6 +13,7 @@ import {
 } from '@auth0/auth0-spa-js';
 import { createContext } from 'react';
 import { AuthState, initialAuthState } from './auth-state';
+import type { Action } from './reducer';
 
 export interface RedirectLoginOptions extends BaseLoginOptions {
   /**
@@ -162,6 +163,7 @@ export interface Auth0ContextInterface extends AuthState {
    * Auth0Client
    */
   client: Auth0Client;
+  dispatch: (action: Action) => void;
 }
 
 /**
@@ -185,6 +187,7 @@ const initialContext = {
   loginWithPopup: stub,
   logout: stub,
   client: ({} as unknown) as Auth0Client,
+  dispatch: stub,
 };
 
 /**

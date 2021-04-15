@@ -1,6 +1,6 @@
 import { AuthState, User } from './auth-state';
 
-type Action =
+export type Action =
   | { type: 'LOGIN_POPUP_STARTED' }
   | {
       type:

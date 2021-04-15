@@ -343,6 +343,7 @@ const Auth0Provider = (opts: Auth0ProviderOptions): JSX.Element => {
         loginWithPopup,
         logout,
         client,
+        dispatch,
       }}
     >
       {children}
